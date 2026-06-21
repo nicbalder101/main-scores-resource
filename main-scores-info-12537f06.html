@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比分网 · 资料整理与信息索引站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: #f7f9fc;
+      color: #1e2a3a;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 0 48px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0f1a2b;
+      margin-bottom: 12px;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #5b6f87;
+      max-width: 480px;
+      margin: 0 auto;
+      border-top: 1px solid #dce3ed;
+      padding-top: 16px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1e2a3a;
+      margin: 48px 0 20px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #dfe6ef;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf1f7;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #172433;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #3b4b62;
+      font-size: 0.98rem;
+    }
+
+    .link-sentence {
+      background: #ffffff;
+      border-left: 4px solid #99b2d0;
+      padding: 24px 28px;
+      border-radius: 0 12px 12px 0;
+      margin: 40px 0 48px;
+      font-size: 1.05rem;
+      color: #1e2a3a;
+      line-height: 1.8;
+    }
+
+    .link-sentence a {
+      color: #1f4f8a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b7cbdf;
+    }
+
+    .link-sentence a:hover {
+      border-bottom-color: #1f4f8a;
+    }
+
+    .faq-item {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #e6ecf3;
+    }
+
+    .faq-item:first-of-type {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #0b1a2c;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .faq-a {
+      color: #3f546c;
+      font-size: 0.96rem;
+    }
+
+    .footer-note {
+      margin-top: 60px;
+      text-align: center;
+      color: #7a8ba0;
+      font-size: 0.85rem;
+      border-top: 1px solid #dfe6ef;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 20px 18px;
+      }
+      .link-sentence {
+        padding: 18px 20px;
+      }
+      .page {
+        padding: 24px 16px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>比分网</h1>
+      <div class="sub">资料整理 · 信息索引 · 一目了然</div>
+    </header>
+
+    <section>
+      <h2 class="section-title">用途卡片</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>📋 赛事信息归集</h3>
+          <p>将分散于各渠道的比赛名单、时间轴、阶段进展整理为可检索的条目，降低重复翻找成本。适合需要快速定位某一轮次或队伍的用户。</p>
+        </div>
+        <div class="card">
+          <h3>📌 索引式浏览</h3>
+          <p>以数据卡片方式呈现核心信息点，减少多余跳转。每张卡片聚焦单个主题，方便横向对比与标记。</p>
+        </div>
+        <div class="card">
+          <h3>⚙️ 轻量资料夹</h3>
+          <p>不堆砌装饰，不铺陈广告。页面结构接近整理后的笔记，侧重内容本身的可读性与提取效率。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">适合人群</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>🧑‍💻 信息整理型用户</h3>
+          <p>习惯通过结构化页面获取线索，而非在社交动态中筛选碎片。需要稳定、干净的参考框架。</p>
+        </div>
+        <div class="card">
+          <h3>📊 轻度研究者</h3>
+          <p>对赛事进程、队伍表现有记录习惯，希望借助固定入口快速回溯关键节点，而非每次重新搜索。</p>
+        </div>
+        <div class="card">
+          <h3>🔍 索引依赖者</h3>
+          <p>偏好通过分类和卡片直接定位内容，不喜欢冗余交互。页面像一份可浏览的目录，而非动态信息流。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="link-sentence">
+      如果你正在寻找一个结构清晰、以资料整理为导向的信息索引站点，不妨将 <a href="https://main-scores.com">比分网</a> 加入你的书签栏。它更像一份经过梳理的参考页，而非传统意义上的门户。
+    </div>
+
+    <section>
+      <h2 class="section-title">常见理解摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">这个页面侧重什么？</div>
+        <div class="faq-a">侧重信息卡片式展示，将零散内容归入固定模块，减少信息噪音，提升查找效率。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">和普通资讯站有什么不同？</div>
+        <div class="faq-a">不以标题流或推送逻辑为主，而是按主题整理成卡片，更像一份可交互的索引笔记。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册或登录？</div>
+        <div class="faq-a">不需要。页面内容以公开信息整理为主，访问即可浏览，无需任何身份验证。</div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      比分网 · 资料整理与信息索引站
+    </div>
+  </div>
+</body>
+</html>

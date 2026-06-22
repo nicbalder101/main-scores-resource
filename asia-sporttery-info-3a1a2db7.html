@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · 竞彩资料库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f5f0;
+            font-family: Georgia, 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2d2a24;
+            line-height: 1.75;
+            padding: 2rem 1rem;
+        }
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fefcf9;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        /* 横幅 — 杂志跨页感 */
+        .banner {
+            background: #e8dfd2 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzAgMTBjMTEgMCAyMCA5IDIwIDIwcy05IDIwLTIwIDIwUzEwIDQxIDEwIDMwIDE5IDEwIDMwIDEweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjY2RjM2I2IiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iLjQ1Ii8+PC9zdmc+') repeat 0 0 / 60px 60px;
+            padding: 3rem 2rem 2.2rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd6ca;
+        }
+        .banner h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: #2f2a22;
+            margin-bottom: 0.3rem;
+        }
+        .banner .sub {
+            font-size: 1rem;
+            color: #6b6256;
+            letter-spacing: 0.15em;
+            border-top: 1px solid #cbc1b2;
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.2rem;
+        }
+        /* 正文区块 — 文章排版 */
+        .content {
+            padding: 2.4rem 2.8rem 2rem;
+        }
+        @media (max-width: 580px) {
+            .content {
+                padding: 1.8rem 1.2rem;
+            }
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+        }
+        .content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+        .content h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2rem 0 0.8rem;
+            color: #3f382f;
+            border-left: 3px solid #b8aa96;
+            padding-left: 0.9rem;
+        }
+        /* 引用块 / 提示框 */
+        .inset-box {
+            background: #f3efe8;
+            border-left: 4px solid #9e8f7a;
+            padding: 1rem 1.6rem;
+            margin: 1.8rem 0;
+            border-radius: 0 3px 3px 0;
+            font-size: 0.95rem;
+            color: #3b342c;
+        }
+        .inset-box strong {
+            font-weight: 600;
+            color: #4d4438;
+        }
+        .inset-box a {
+            color: #5f4e38;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+        .inset-box a:hover {
+            color: #2d241b;
+        }
+        /* 特点简列 — 不使用卡片，只用分隔线 */
+        .feature-list {
+            margin: 1.8rem 0 0.8rem;
+            padding: 0;
+            list-style: none;
+            counter-reset: idx;
+        }
+        .feature-list li {
+            counter-increment: idx;
+            padding: 0.7rem 0 0.7rem 2.2rem;
+            border-bottom: 1px solid #eee7dd;
+            position: relative;
+            font-size: 0.98rem;
+        }
+        .feature-list li::before {
+            content: counter(idx) ".";
+            position: absolute;
+            left: 0;
+            color: #7c6f5c;
+            font-weight: 400;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        /* 页尾 */
+        .footer-note {
+            margin: 2.6rem 1.8rem 1.8rem;
+            padding: 1rem 0 0.5rem;
+            border-top: 1px solid #ddd3c5;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6a6053;
+        }
+        .footer-note a {
+            color: #4f4435;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .footer-note a:hover {
+            color: #2c241b;
+        }
+        /* 小型分隔 */
+        .hr-soft {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d5cbbc, transparent);
+            margin: 1.6rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="banner">
+        <h1>竞彩资料索引</h1>
+        <div class="sub">信息整理 · 赛事参考</div>
+    </div>
+
+    <div class="content">
+
+        <p>
+            对于日常关注体育竞猜的人来说，信息流的庞杂常常超过有效分析所需的时间。从盘口变动、球队近况到球员伤病记录，每项数据单独看都有价值，但缺乏统一索引便容易陷入碎片阅读。本页围绕<strong>竞彩网</strong>提供的信息结构，尝试梳理出一份可复用的资料查阅逻辑，帮助使用者更快定位自己所关注的内容层级。
+        </p>
+
+        <h2>背景：信息分类的必要性</h2>
+        <p>
+            体育彩票竞猜在中文语境下已形成较成熟的资讯生态，但多数用户仍依赖分散的社交媒体或论坛获取赛前参考。实际上，<a href="https://asia-sporttery.com">竞彩网</a>作为官方信息聚合出口，整合了联赛数据、历史交锋、赔率变化等模块。如果能以资料整理者的视角重新组织这些条目，便能在分析流程中减少跳转成本。以下三段内容分别从数据层、赛事层、辅助层说明该平台的信息价值。
+        </p>
+
+        <div class="inset-box">
+            <strong>整理思路：</strong> 从宏观赛事日历切入，再逐级下沉至即时赔率与统计回溯，保持每层数据可横向对比。
+        </div>
+
+        <h2>数据层 · 结构性信息</h2>
+        <p>
+            竞猜分析的第一步往往不是“猜”，而是确认基本面。通过<a href="https://asia-sporttery.com">竞彩网</a>的赛事列表，可以快速获取比赛时间、主客队名称、联赛轮次等基础字段。更重要的是，这些数据以表格形式并列呈现，避免了不同网站之间的命名差异。对于需要批量整理赛程的分析者，直接从该页面提取结构化字段比逐场检索节省不少时间。此外，赔率变化的时间戳在资料归档中常被忽略，但若结合每轮数据快照，可以形成独立的变动曲线库。
+        </p>
+
+        <h2>赛事层 · 场景化索引</h2>
+        <p>
+            不同赛事的投注逻辑差异很大，五大联赛与杯赛、国家队比赛的权重截然不同。利用<a href="https://asia-sporttery.com">竞彩网</a>的标签筛选（如“竞足”、“竞篮”、“北单”），可以快速缩小范围。在实际使用场景中，建议将每周的焦点战单独建文件夹，并配合平台提供的交锋记录做纵向对比。同时，注意赛事数据的更新频率——通常赛前24小时内的变动最为密集，这一阶段的信息整理效率也最高。赛后的统计复盘则更适合作为长期资料留存，用于修正个人的分析模型。
+        </p>
+
+        <hr class="hr-soft">
+
+        <h2>辅助层 · 索引之外的延伸</h2>
+        <ul class="feature-list">
+            <li><strong>历史归档：</strong> 每轮比赛结束后，可将即时赔率快照存档，与赛果对照生成个人校验表。</li>
+            <li><strong>交叉参考：</strong> 利用平台的多联赛并列展示，同时对比不同联赛的盘口深度，辅助判断热度分布。</li>
+            <li><strong>频率标记：</strong> 对频繁变更数据的场次做标记，这类比赛往往信息不对称度更高，值得单独跟踪。</li>
+        </ul>
+
+        <p>
+            信息整理的目的不是堆叠数据，而是在重复查阅中形成自己的索引习惯。无论是赛前预览还是赛后复盘，保持一致的字段顺序都能提高分析速度。<a href="https://asia-sporttery.com">竞彩网</a>提供的信息骨架已经足够完整，剩下的衔接工作取决于个人如何组织这些素材。另外，注意区分原始数据与二次解读，避免将外部观点混入基础信息库。
+        </p>
+
+        <div class="inset-box">
+            <strong>FAQ 摘要</strong><br>
+            <span style="font-weight:500;">Q：如何避免信息过载？</span><br>
+            优先聚焦3-5个核心联赛，其他赛事仅记录胜负及关键赔率变化。<br>
+            <span style="font-weight:500;">Q：资料更新频率如何设定？</span><br>
+            赛前每日一次，赛后次日补录复盘数据，长期存储每轮结束后的最终赔率表。
+        </div>
+
+        <hr class="hr-soft">
+
+        <p style="font-size:0.93rem; color:#5b5247;">
+            本页作为资料索引说明，不提供任何预测或保证。所有数据均以<a href="https://asia-sporttery.com">竞彩网</a>实时信息为准，请结合自身判断使用。
+        </p>
+
+    </div><!-- .content -->
+
+    <div class="footer-note">
+        <a href="https://asia-sporttery.com">竞彩网</a> · 信息索引参考 | 整理文档
+    </div>
+
+</div><!-- .page -->
+</body>
+</html>
